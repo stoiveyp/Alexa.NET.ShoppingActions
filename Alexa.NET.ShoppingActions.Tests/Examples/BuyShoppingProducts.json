@@ -1,0 +1,12 @@
+﻿{
+  "type": "Connections.StartConnection",
+  "uri": "connection://AMAZON.BuyShoppingProducts/1",
+  "input": {
+    "products": [
+      {
+        "asin": "B01962MDHA"
+      }
+    ]
+  },
+  "token": "PurchaseProductToken"
+}
