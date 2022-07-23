@@ -21,4 +21,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Alexa.NET.ShoppingActions\Alexa.NET.ShoppingActions.csproj" />
+  </ItemGroup>
+
 </Project>
