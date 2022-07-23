@@ -17,5 +17,12 @@ namespace Alexa.NET.ShoppingActions.Tests
             var task = new AddToShoppingCart("B01962MDHA");
             Assert.True(Utility.CompareJson(task.ToConnectionDirective("AddToShoppingCartToken"), "AddToShoppingCart.json"));
         }
+
+        [Fact]
+        public void BuyShoppingProducts()
+        {
+            var task = new BuyShoppingProducts("B01962MDHA");
+            Assert.True(Utility.CompareJson(task.ToConnectionDirective("PurchaseProductToken"), "BuyShoppingProducts.json"));
+        }
     }
 }
