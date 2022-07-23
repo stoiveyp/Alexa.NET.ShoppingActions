@@ -2,7 +2,7 @@ using Alexa.NET.ConnectionTasks;
 
 namespace Alexa.NET.ShoppingActions.Tests
 {
-    public class ReferenceTests
+    public class RequestTests
     {
         [Fact]
         public void ProductEntity()

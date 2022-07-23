@@ -1,0 +1,12 @@
+﻿{
+  "type": "Connections.Response",
+  "status": {
+    "code": "200",
+    "message": "Success"
+  },
+  "result": {
+    "code": "AlexaShopping.RetryLaterError",
+    "message": "Encountered an error when trying to process the request, please try again later."
+  },
+  "token": "PurchaseProductToken"
+}
