@@ -25,4 +25,10 @@
     <ProjectReference Include="..\Alexa.NET.ShoppingActions\Alexa.NET.ShoppingActions.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Examples\ProductEntity.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
