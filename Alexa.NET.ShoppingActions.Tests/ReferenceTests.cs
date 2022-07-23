@@ -1,3 +1,5 @@
+using Alexa.NET.ConnectionTasks;
+
 namespace Alexa.NET.ShoppingActions.Tests
 {
     public class ReferenceTests
@@ -7,6 +9,13 @@ namespace Alexa.NET.ShoppingActions.Tests
         {
             var product = new ProductEntity("B01962MDHA");
             Assert.True(Utility.CompareJson(product, "ProductEntity.json"));
+        }
+
+        [Fact]
+        public void AddToShoppingCart()
+        {
+            var task = new AddToShoppingCart("B01962MDHA");
+            Assert.True(Utility.CompareJson(task.ToConnectionDirective("AddToShoppingCartToken"), "AddToShoppingCart.json"));
         }
     }
 }
