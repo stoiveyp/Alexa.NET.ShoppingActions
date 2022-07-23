@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 using Alexa.NET.ConnectionTasks;
-using Alexa.NET.ConnectionTasks.Inputs;
 using Alexa.NET.Request.Type;
 using Alexa.NET.Response.Converters;
 using Newtonsoft.Json;
@@ -17,17 +13,27 @@ namespace Alexa.NET.ShoppingActions
 
         public bool CanConvert(JObject jObject)
         {
-            return jObject.ContainsKey("uri") && IsAddToShoppingCart(jObject);
+            return jObject.ContainsKey("uri") && (IsAddToShoppingCart(jObject) || IsBuyShoppingProducts(jObject));
         }
 
         public static bool IsAddToShoppingCart(JObject jObject) =>
             jObject.GetValue("uri").Value<string>() == AddToShoppingCart.AssociatedUri;
+
+        public static bool IsBuyShoppingProducts(JObject jObject) =>
+            jObject.GetValue("uri").Value<string>() == BuyShoppingProducts.AssociatedUri;
 
         public IConnectionTask Convert(JObject jObject)
         {
             if (IsAddToShoppingCart(jObject))
             {
                 var task = new AddToShoppingCart();
+                Serializer.Populate(jObject.CreateReader(), task);
+                return task;
+            }
+
+            if (IsBuyShoppingProducts(jObject))
+            {
+                var task = new BuyShoppingProducts();
                 Serializer.Populate(jObject.CreateReader(), task);
                 return task;
             }
