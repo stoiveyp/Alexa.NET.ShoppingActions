@@ -21,7 +21,7 @@ skillResponse.Response.Directives.Add(directive);
 ```csharp
 using Alexa.NET.ShoppingActions
 ...
-var directive = new StartConnectionDirective(new AddToShoppingCart("ASIN"), "token");
+var directive = new StartConnectionDirective(new BuyShoppingProducts("ASIN"), "token");
 skillResponse.Response.Directives.Add(directive);
 ```
 
