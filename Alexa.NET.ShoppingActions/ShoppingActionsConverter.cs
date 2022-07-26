@@ -9,7 +9,7 @@ namespace Alexa.NET.ShoppingActions
 {
     public class ShoppingActionsConverter : IConnectionTaskConverter
     {
-        private static readonly JsonSerializer Serializer = JsonSerializer.Create();
+        internal static readonly JsonSerializer Serializer = JsonSerializer.Create();
 
         public bool CanConvert(JObject jObject)
         {

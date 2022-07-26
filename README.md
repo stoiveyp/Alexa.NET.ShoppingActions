@@ -30,11 +30,16 @@ skillResponse.Response.Directives.Add(directive);
 ## Add Request Handler support
 ```csharp
 using Alexa.NET.ShoppingActions
-switch(request)
+switch(skillRequest.Request)
 {
-case ConnectionShoppingResponse paymentDetail:
-//TODO: Handle response here
-}
+    case SessionResumedRequest resumed:
+        var shoppingResult = ShoppingKit.ResultFromSessionResumed(resumed);
+        if(shoppingResult != null)
+        {
+            //TODO: error logic here
+        }
+    ...
+};
 ```
 
 
